@@ -14,7 +14,7 @@ int main()
 {
 	srand(time(0));
 	SetConsoleCP(1251);
-
+	SetConsoleOutputCP(1251);
 
 	const int size = 10;
 	int arr[size];
@@ -26,6 +26,8 @@ int main()
 		{
 			system("cls");
 			cout << "1. Вывести массив" << endl;
+			cout << "2. Отсортировать по возрастанию" << endl;
+			cout << "3. Отсортировать по убыванию" << endl;
 			cout << "2. Выход" << endl;
 
 			int input;
@@ -42,8 +44,17 @@ int main()
 					cout << arr[i] << " ";
 					cout << endl;
 				}
+				break;
+			case 2:
+				sort(arr, arr + size);
 
-			}
+			
+			break;
+			case 3:
+				sort(arr, arr + size, [](int a, int b) {return a > b;});
+
+		
+		break;
 
 
 		}
