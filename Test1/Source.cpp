@@ -10,7 +10,7 @@
 using namespace std;
 
 
-int main()
+void main()
 {
 	srand(time(0));
 	SetConsoleCP(1251);
@@ -26,9 +26,12 @@ int main()
 		{
 			system("cls");
 			cout << "1. Вывести массив" << endl;
-			cout << "2. Отсортировать по возрастанию" << endl;
-			cout << "3. Отсортировать по убыванию" << endl;
-			cout << "2. Выход" << endl;
+			
+			cout << "2. Вывести массив индексами" << endl;
+			
+			cout << "3. Отсортировать по возрастанию" << endl;
+			cout << "4. Отсортировать по убыванию" << endl;
+			cout << "0. Выход" << endl;
 
 			int input;
 			cin >> input;
@@ -46,11 +49,18 @@ int main()
 				}
 				break;
 			case 2:
+				for (int i = 0; i < size; i++)
+				{
+					cout << "[" << i << "]" << arr[i] << endl;
+				}
+				system("pause");
+				break;
+			case 3:
 				sort(arr, arr + size);
 
 			
 			break;
-			case 3:
+			case 4:
 				sort(arr, arr + size, [](int a, int b) {return a > b;});
 
 		
