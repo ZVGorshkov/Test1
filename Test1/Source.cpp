@@ -10,11 +10,11 @@
 using namespace std;
 
 
-int main()
+void main()
 {
 	srand(time(0));
 	SetConsoleCP(1251);
-
+	SetConsoleOutputCP(1251);
 
 	const int size = 10;
 	int arr[size];
@@ -26,7 +26,8 @@ int main()
 		{
 			system("cls");
 			cout << "1. Вывести массив" << endl;
-			cout << "2. Выход" << endl;
+			cout << "2. Вывести массив индексами" << endl;
+			cout << "0. Выход" << endl;
 
 			int input;
 			cin >> input;
@@ -42,7 +43,12 @@ int main()
 					cout << arr[i] << " ";
 					cout << endl;
 				}
-
+			case 2:
+				for (int i = 0; i < size; i++)
+				{
+					cout << "[" << i << "]" << arr[i] << endl;
+				}
+				system("pause");
 			}
 
 
